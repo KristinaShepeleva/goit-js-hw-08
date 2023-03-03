@@ -16,16 +16,32 @@ const iframe = document.querySelector('iframe');
            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
         }
 
-try {
-const savedData = localStorage.getItem(STORAGE_KEY);
-const parsedData = JSON.parse(savedData);
-const time = parsedData.seconds;
+//try {
+//const savedData = localStorage.getItem(STORAGE_KEY);
+//const parsedData = JSON.parse(savedData);
+//  const time = parsedData.seconds;
+  
+ // if (localStorage.getItem(STORAGE_KEY)) {
+ //  player.setCurrentTime(JSON.parse(localStorage.getItem(STORAGE_KEY)).seconds);
+ //   console.log('time',time);
+//  } 0;
+    
+//} catch (error) {
+//  console.log(error.name); 
+//  console.log(error.message); 
+//}
+
+
+if (localStorage.getItem(STORAGE_KEY)) {
+  try {
+    const savedData = localStorage.getItem(STORAGE_KEY);
+    const parsedData = JSON.parse(savedData);
+    const time = parsedData.seconds;
     
     player.setCurrentTime(time);
-    console.log('time',time);
-
-} catch (error) {
+  }
+  catch (error) {
   console.log(error.name); 
   console.log(error.message); 
 }
-
+}
