@@ -1,6 +1,6 @@
 import throttle from 'lodash.throttle';
-//import '../css/common.css';
-//import '../css/feedback-form.css';
+import '../css/common.css';
+import '../css/03-feedback.css';
 
 const STORAGE_KEY = 'feedback-form-state';
 
@@ -15,11 +15,6 @@ refs.form.addEventListener('input', throttle(onTextareaInput, 500));
 
 populateForm();
 
-/*
- * - Останавливаем поведение по умолчанию
- * - Убираем сообщение из хранилища
- * - Очищаем форму
- */
 function onFormSubmit(evt) {
   evt.preventDefault();
 
